@@ -53,8 +53,11 @@ const movieIdValidation = celebrate({
 const movieDataValidation = celebrate({
   body: Joi.object().keys({
     country: Joi.string()
+      .min(2)
+      .max(30)
       .required(),
     director: Joi.string()
+      .min(2)
       .required(),
     duration: Joi.number()
       .positive()
@@ -63,6 +66,7 @@ const movieDataValidation = celebrate({
       .length(4)
       .required(),
     description: Joi.string()
+      .min(2)
       .required(),
     image: Joi.string()
       .required()
@@ -77,8 +81,10 @@ const movieDataValidation = celebrate({
       .positive()
       .required(),
     nameRU: Joi.string()
+      .min(2)
       .required(),
     nameEN: Joi.string()
+      .min(2)
       .required(),
   }),
 });
