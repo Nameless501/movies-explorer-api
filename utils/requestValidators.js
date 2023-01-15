@@ -73,9 +73,8 @@ const movieDataValidation = celebrate({
     thumbnail: Joi.string()
       .required()
       .pattern(LINK_REG_EXP),
-    movieId: Joi.string()
-      .hex()
-      .length(24)
+    movieId: Joi.number()
+      .positive()
       .required(),
     nameRU: Joi.string()
       .required(),
