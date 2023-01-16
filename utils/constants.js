@@ -28,7 +28,7 @@ const DEFAULT_ERROR_MESSAGE = 'Произошла ошибка';
 
 const LOGOUT_MESSAGE = 'Выход из аккаунта успешно выполнен';
 
-const LINK_REG_EXP = /^https?:\/\/(www\.)?[\w\d@:%~#=.+-/]+$/;
+const LINK_REG_EXP = /[(http(s)?)://(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/;
 
 const ORIGINS = [
   'http://localhost:3001',
@@ -43,6 +43,10 @@ const CORS_CONFIG = {
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
 };
+
+const DEFAULT_PORT = 3000;
+
+const DEFAULT_DB_URL = 'mongodb://localhost:27017/bitfilmsdb';
 
 module.exports = {
   BAD_REQUEST_CODE,
@@ -62,4 +66,6 @@ module.exports = {
   LOGOUT_MESSAGE,
   LINK_REG_EXP,
   CORS_CONFIG,
+  DEFAULT_PORT,
+  DEFAULT_DB_URL,
 };

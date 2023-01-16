@@ -4,8 +4,10 @@ const { login, logout, createUser } = require('../controllers/users');
 const auth = require('../middlewares/auth');
 const { signinValidation, signupValidation } = require('../utils/requestValidators');
 const { requestLogger } = require('../middlewares/logger');
+const { rateLimiter } = require('../middlewares/rateLimiter');
 
 router.use(requestLogger);
+router.use(rateLimiter);
 
 router.post('/signin', signinValidation, login);
 router.post('/signup', signupValidation, createUser);

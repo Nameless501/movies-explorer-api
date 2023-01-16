@@ -5,13 +5,10 @@ const movieSchema = new mongoose.Schema(
   {
     country: {
       type: String,
-      minlength: 2,
-      maxlength: 30,
       required: true,
     },
     director: {
       type: String,
-      minlength: 2,
       required: true,
     },
     duration: {
@@ -20,13 +17,10 @@ const movieSchema = new mongoose.Schema(
     },
     year: {
       type: String,
-      minlength: 4,
-      maxlength: 4,
       required: true,
     },
     description: {
       type: String,
-      minlength: 2,
       required: true,
     },
     image: {
@@ -61,12 +55,10 @@ const movieSchema = new mongoose.Schema(
     },
     nameRU: {
       type: String,
-      minlength: 2,
       required: true,
     },
     nameEN: {
       type: String,
-      minlength: 2,
       required: true,
     },
   },

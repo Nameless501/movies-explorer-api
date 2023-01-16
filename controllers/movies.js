@@ -41,17 +41,12 @@ const createMovie = (req, res, next) => {
       movieId,
       owner: req.user._id,
     },
-    (err, newMovie) => {
-      if (err) {
-        handleError(err, next);
-        return;
-      }
-      Movie.findById(newMovie._id)
-        .populate(['owner'])
-        .then((movie) => res.status(CREATED_CODE).send(movie))
-        .catch((e) => handleError(e, next));
-    },
-  );
+  ).then((newMovie) => {
+    Movie.findById(newMovie._id)
+      .populate(['owner'])
+      .then((movie) => res.status(CREATED_CODE).send(movie))
+      .catch((e) => handleError(e, next));
+  }).catch((err) => handleError(err, next));
 };
 
 const deleteMovie = (req, res, next) => {
@@ -62,12 +57,13 @@ const deleteMovie = (req, res, next) => {
     .then((movie) => {
       if (movie.owner.toString() === req.user._id) {
         movie.remove()
-          .then(() => res.send(movie));
+          .then(() => res.send(movie))
+          .catch((err) => handleError(err, next));
       } else {
         throw new ForbiddenError();
       }
     })
-    .catch((err) => handleError(err, next));
+    .catch((e) => handleError(e, next));
 };
 
 module.exports = {
