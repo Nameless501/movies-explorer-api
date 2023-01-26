@@ -1,6 +1,6 @@
 # Дипломный проект бэкенд
 
-[Ссылка на API](api.nameless.nomoredomains.rocks)
+[Ссылка на API](https://api.nameless.nomoredomains.rocks)
 
 ___
 
