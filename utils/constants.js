@@ -33,6 +33,8 @@ const LINK_REG_EXP = /[(http(s)?)://(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6
 const ORIGINS = [
   'http://localhost:3001',
   'http://localhost:3000',
+  'https://nameless.nomoredomainsclub.ru',
+  'http://nameless.nomoredomainsclub.ru',
 ];
 
 const CORS_CONFIG = {
