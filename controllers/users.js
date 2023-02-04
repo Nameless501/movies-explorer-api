@@ -32,6 +32,7 @@ const logout = (req, res, next) => {
   res.clearCookie('jwt', {
     domain: 'api.nameless.nomoredomains.rocks',
     path: '/',
+    sameSite: 'none',
   }).send({ message: LOGOUT_MESSAGE });
 };
 
