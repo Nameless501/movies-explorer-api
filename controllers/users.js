@@ -30,7 +30,7 @@ const login = (req, res, next) => {
 
 const logout = (req, res, next) => {
   res.clearCookie('jwt', {
-    domain: 'nameless.nomoredomainsclub.ru',
+    domain: 'api.nameless.nomoredomains.rocks',
     path: '/',
   }).send({ message: LOGOUT_MESSAGE });
 };
