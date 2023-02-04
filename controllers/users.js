@@ -29,7 +29,7 @@ const login = (req, res, next) => {
 };
 
 const logout = (req, res, next) => {
-  res.clearCookie('jwt').send({ message: LOGOUT_MESSAGE });
+  res.clearCookie('jwt').status(204).send({ message: LOGOUT_MESSAGE });
 };
 
 function findUserById(model, id, res, next) {
