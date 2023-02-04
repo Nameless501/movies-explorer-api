@@ -29,7 +29,10 @@ const login = (req, res, next) => {
 };
 
 const logout = (req, res, next) => {
-  res.clearCookie('jwt').status(204).send({ message: LOGOUT_MESSAGE });
+  res.clearCookie('jwt', {
+    domain: 'nameless.nomoredomainsclub.ru',
+    path: '/',
+  }).send({ message: LOGOUT_MESSAGE });
 };
 
 function findUserById(model, id, res, next) {
