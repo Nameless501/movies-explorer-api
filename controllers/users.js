@@ -29,7 +29,11 @@ const login = (req, res, next) => {
 };
 
 const logout = (req, res, next) => {
-  res.clearCookie('jwt').send({ message: LOGOUT_MESSAGE });
+  res.clearCookie('jwt', {
+    httpOnly: true,
+    sameSite: 'none',
+    secure: NODE_ENV === 'production',
+  }).send({ message: LOGOUT_MESSAGE });
 };
 
 function findUserById(model, id, res, next) {
