@@ -18,6 +18,8 @@ const login = (req, res, next) => {
         httpOnly: true,
         sameSite: 'none',
         secure: NODE_ENV === 'production',
+        domain: 'api.nameless.nomoredomains.rocks',
+        path: '/',
       })
         .send({
           name: user.name,
@@ -33,6 +35,8 @@ const logout = (req, res, next) => {
     httpOnly: true,
     sameSite: 'none',
     secure: NODE_ENV === 'production',
+    domain: 'api.nameless.nomoredomains.rocks',
+    path: '/',
   }).send({ message: LOGOUT_MESSAGE });
 };
 
