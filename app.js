@@ -9,7 +9,8 @@ const { CORS_CONFIG, DEFAULT_PORT, DEFAULT_DB_URL } = require('./utils/constants
 const { centralizedErrorHandler } = require('./utils/centralizedErrorHandler');
 const { errorLogger } = require('./middlewares/logger');
 
-const { PORT = DEFAULT_PORT, DB_URL = DEFAULT_DB_URL } = process.env;
+const { DB_URL = DEFAULT_DB_URL } = process.env;
+const PORT = process.env.PORT || DEFAULT_PORT;
 
 const app = express();
 
