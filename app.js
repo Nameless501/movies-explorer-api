@@ -27,4 +27,4 @@ app.use(errorLogger);
 app.use(errors());
 app.use(centralizedErrorHandler);
 
-app.listen(`0.0.0.0:${PORT}`);
+app.listen(`0.0.0.0:$${PORT}`);
