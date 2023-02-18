@@ -6,6 +6,8 @@ const { NEED_AUTH_MESSAGE } = require('../utils/constants');
 const { JWT_KEY = 'some-secret-key' } = process.env;
 
 module.exports = (req, res, next) => {
+  console.log(req);
+
   const token = req.cookies.jwt;
   let payload;
 

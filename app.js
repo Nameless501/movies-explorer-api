@@ -1,6 +1,5 @@
 const express = require('express');
 require('dotenv').config();
-require('dotenv-vault-core').config();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
@@ -10,8 +9,7 @@ const { CORS_CONFIG, DEFAULT_PORT, DEFAULT_DB_URL } = require('./utils/constants
 const { centralizedErrorHandler } = require('./utils/centralizedErrorHandler');
 const { errorLogger } = require('./middlewares/logger');
 
-const { DB_URL = DEFAULT_DB_URL } = process.env;
-const PORT = process.env.PORT || DEFAULT_PORT;
+const { PORT = DEFAULT_PORT, DB_URL = DEFAULT_DB_URL } = process.env;
 
 const app = express();
 
